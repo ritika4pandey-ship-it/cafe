@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ritika Pandey | Café</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/*BASIC*/
+
+:root{
+    --cream:#fbf6ef;
+    --cream2:#f2e7d8;
+    --brown:#4b3028;
+    --brown2:#76584d;
+    --rose:#b98272;
+    --rose2:#d9aaa0;
+    --white:#fff;
+    --text:#392722;
+    --muted:#806d64;
+    --heading:"Playfair Display",serif;
+    --body:"DM Sans",sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--body);
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(251,246,239,.93);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(75,48,40,.08);
+}
+
+.nav-container{
+    width:min(1200px,90%);
+    height:80px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:var(--heading);
+    font-size:28px;
+    font-weight:600;
+    color:var(--brown);
+}
+
+.logo span{
+    color:var(--rose);
+}
+
+nav{
+    display:flex;
+    gap:27px;
+}
+
+nav a{
+    font-size:13px;
+    font-weight:600;
+    color:var(--brown2);
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--rose);
+}
+
+.nav-button{
+    background:var(--brown);
+    color:white;
+
+    padding:11px 21px;
+    border-radius:50px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.nav-button:hover{
+    background:var(--rose);
+    transform:translateY(-2px);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:var(--brown);
+    font-size:22px;
+    css
+/* Hide checkbox */
+.menu-toggle{
+    display:none;
+}
+
+/* Mobile menu */
+@media(max-width:950px){
+
+    nav{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        padding:25px;
+        background:var(--cream);
+
+        display:none;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    /* Checkbox checked = menu open */
+    .menu-toggle:checked ~ nav{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+        cursor:pointer;
+    }
+
+    nav a{
+        padding:8px 0;
+    }
+}
+}
+
+
+/*HERO*/
+
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(48,29,23,.86),
+        rgba(48,29,23,.45),
+        rgba(48,29,23,.12)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    width:min(1200px,90%);
+    margin:auto;
+
+    padding-top:70px;
+
+    color:white;
+}
+
+.rating{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 16px;
+
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+
+    font-weight:700;
+}
+
+.rating span{
+    color:#ffd58a;
+}
+
+.rating small{
+    opacity:.8;
+    font-weight:400;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.hero .eyebrow{
+    margin-top:32px;
+}
+
+.hero h1{
+    max-width:750px;
+
+    font-family:var(--heading);
+    font-size:clamp(48px,7vw,86px);
+    line-height:1.05;
+    font-weight:600;
+}
+
+.hero h1 em,
+h2 em{
+    color:var(--rose2);
+    font-style:italic;
+}
+
+.hero-text{
+    max-width:570px;
+    margin:25px 0;
+
+    font-size:16px;
+    opacity:.9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin:30px 0;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 25px;
+    border-radius:50px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn.primary{
+    background:var(--rose);
+    color:white;
+}
+
+.btn.primary:hover{
+    background:#a86f63;
+    transform:translateY(-3px);
+}
+
+.btn.secondary{
+    border:1px solid rgba(255,255,255,.5);
+    color:white;
+}
+
+.btn.secondary:hover{
+    background:white;
+    color:var(--brown);
+}
+
+.location{
+    display:flex;
+    gap:9px;
+    align-items:center;
+
+    font-size:13px;
+}
+
+
+/*INTRO*/
+
+.intro{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.intro-card{
+    max-width:730px;
+    margin:auto;
+}
+
+.small-title{
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:700;
+    color:var(--rose);
+}
+
+.intro h2,
+.section-heading h2,
+.about-content h2,
+.contact h2{
+    font-family:var(--heading);
+    font-weight:600;
+    font-size:clamp(38px,5vw,58px);
+    line-height:1.15;
+
+    margin:15px 0 20px;
+}
+
+.intro h2 span{
+    color:var(--rose);
+}
+
+.intro p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+.text-link{
+    display:inline-block;
+    margin-top:20px;
+
+    font-weight:700;
+    color:var(--brown);
+
+    border-bottom:1px solid var(--rose);
+}
+
+
+/*SECTIONs*/
+
+.section{
+    padding:110px 0;
+}
+
+.section-container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+
+/* ABOUT */
+
+.about{
+    background:var(--cream2);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    height:580px;
+    object-fit:cover;
+
+    border-radius:220px 220px 20px 20px;
+}
+
+.image-note{
+    position:absolute;
+    bottom:25px;
+    right:-25px;
+
+    background:white;
+    padding:20px 25px;
+
+    border-radius:14px;
+
+    box-shadow:0 15px 40px rgba(50,30,20,.12);
+}
+
+.image-note strong,
+.image-note span{
+    display:block;
+}
+
+.image-note strong{
+    font-family:var(--heading);
+    color:var(--brown);
+}
+
+.image-note span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.about-content .eyebrow,
+.section-heading .eyebrow,
+.contact .eyebrow{
+    color:var(--rose);
+}
+
+.about-content p{
+    color:var(--muted);
+    margin-bottom:15px;
+}
+
+.owner{
+    margin-top:30px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.owner-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--brown);
+    color:white;
+
+    font-family:var(--heading);
+}
+
+.owner strong,
+.owner span{
+    display:block;
+}
+
+.owner span{
+    font-size:12px;
+    color:var(--muted);
+}
+
+
+/*CAFE VIBE*/
+
+.section-heading{
+    max-width:650px;
+    margin-bottom:55px;
+}
+
+.section-heading > p:last-child{
+    color:var(--muted);
+}
+
+.vibe-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.vibe-card{
+    background:white;
+    padding:35px 28px;
+
+    border-radius:18px;
+
+    transition:.35s;
+}
+
+.vibe-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(60,35,25,.1);
+}
+
+.vibe-icon{
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#f2dfd8;
+    color:var(--rose);
+
+    margin-bottom:25px;
+}
+
+.vibe-card h3{
+    font-family:var(--heading);
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.vibe-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/*GALLERY*/
+
+.gallery{
+    background:#fffaf5;
+}
+
+.gallery-grid{
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr 1fr;
+
+    grid-auto-rows:250px;
+
+    gap:14px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:14px;
+}
+
+.gallery-item.large{
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+.gallery-label{
+    position:absolute;
+    left:15px;
+    bottom:15px;
+
+    background:rgba(255,255,255,.9);
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/*OCCASIONS*/
+
+.occasions{
+    background:var(--brown);
+    color:white;
+}
+
+.occasions .section-heading .eyebrow{
+    color:var(--rose2);
+}
+
+.occasions .section-heading > p:last-child{
+    color:#cdbdb6;
+}
+
+.occasion-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.occasion-card{
+    min-height:270px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:15px;
+
+    transition:.3s;
+}
+
+.occasion-card:hover{
+    background:rgba(255,255,255,.07);
+    transform:translateY(-5px);
+}
+
+.occasion-card span{
+    font-size:11px;
+    color:var(--rose2);
+}
+
+.occasion-card i{
+    display:block;
+
+    margin:45px 0 20px;
+
+    font-size:25px;
+
+    color:var(--rose2);
+}
+
+.occasion-card h3{
+    font-family:var(--heading);
+    font-size:25px;
+}
+
+.occasion-card p{
+    margin-top:7px;
+
+    color:#cdbdb6;
+    font-size:13px;
+}
+
+
+/*CTA*/
+
+.cta{
+    min-height:570px;
+
+    display:grid;
+    place-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        rgba(61,39,31,.67),
+        rgba(61,39,31,.67)
+    ),
+    url("https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.cta-content{
+    max-width:650px;
+    padding:30px;
+}
+
+.cta .eyebrow{
+    color:var(--rose2);
+}
+
+.cta h2{
+    font-family:var(--heading);
+    font-size:clamp(45px,6vw,70px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.cta p:not(.eyebrow){
+    margin-bottom:30px;
+    opacity:.9;
+}
+
+
+/*CONTACT*/
+
+.contact{
+    background:var(--cream);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    align-items:center;
+}
+
+.contact-text{
+    max-width:480px;
+    color:var(--muted);
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.contact-item{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+.contact-icon{
+    width:50px;
+    height:50px;
+
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#ead7d1;
+    color:var(--rose);
+}
+
+.contact-item small{
+    display:block;
+
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:700;
+
+    color:var(--rose);
+}
+
+.contact-item p,
+.contact-item a{
+    font-weight:600;
+    color:var(--brown);
+}
+
+.stars{
+    color:#d49a42;
+    letter-spacing:2px;
+    margin-left:10px;
+}
+
+.contact-button{
+    width:max-content;
+}
+
+
+/*FOOTER*/
+
+footer{
+    background:#30201b;
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-container{
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand h3{
+    font-family:var(--heading);
+    font-size:28px;
+}
+
+.footer-brand h3 span{
+    color:var(--rose2);
+}
+
+.footer-brand p{
+    color:#bca9a1;
+    font-size:13px;
+    max-width:300px;
+}
+
+.footer-links{
+    display:flex;
+    gap:22px;
+}
+
+.footer-links a{
+    font-size:12px;
+    color:#d6c9c4;
+}
+
+.social{
+    display:flex;
+    gap:10px;
+}
+
+.social a{
+    width:38px;
+    height:38px;
+
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    transition:.3s;
+}
+
+.social a:hover{
+    background:var(--rose);
+}
+
+.copyright{
+    width:min(1200px,90%);
+    margin:45px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    text-align:center;
+
+    font-size:11px;
+    color:#9f8e87;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    nav{
+        position:absolute;
+
+        top:80px;
+        left:0;
+
+        width:100%;
+
+        padding:25px;
+
+        background:var(--cream);
+
+        display:none;
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .vibe-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .occasion-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .nav-container{
+        height:70px;
+    }
+
+    nav{
+        top:70px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .hero{
+        min-height:750px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-text{
+        font-size:14px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:max-content;
+    }
+
+    .section{
+        padding:80px 0;
+    }
+
+    .intro{
+        padding:80px 20px;
+    }
+
+    .about-image img{
+        height:450px;
+    }
+
+    .image-note{
+        right:10px;
+    }
+
+    .vibe-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:180px;
+    }
+
+    .occasion-grid{
+        grid-template-columns:1fr;
+    }
+
+    .occasion-card{
+        min-height:220px;
+    }
+
+    .cta{
+        min-height:500px;
+    }
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<a href="#home" class="logo">
+Ritika <span>Pandey</span>
+</a>
+
+<nav id="navMenu">
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#vibe">Cafe Vibe</a>
+<a href="#gallery">Gallery</a>
+<a href="#occasions">Occasions</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a href="#contact" class="nav-button">
+Book a Table
+</a>
+
+<button class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+</header>
+
+
+<!--  HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<div class="rating">
+<span>★</span>
+4.5
+<small>Guest Rating</small>
+</div>
+
+<p class="eyebrow">
+A LITTLE PLACE TO FEEL AT HOME
+</p>
+
+<h1>
+Sip Slowly.<br>
+<em>Stay A Little Longer.</em>
+</h1>
+
+<p class="hero-text">
+A warm and aesthetic café experience in the heart of
+Sector 50, Noida — made for conversations, celebrations,
+coffee dates and beautiful evenings.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="btn primary">
+Visit Us
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="#vibe" class="btn secondary">
+Explore Café
+</a>
+
+</div>
+
+<div class="location">
+<i class="fa-solid fa-location-dot"></i>
+Sector 50, Noida, Delhi
+</div>
+
+</div>
+
+</section>
+
+
+<!--  INTRO -->
+
+<section class="intro">
+
+<div class="intro-card">
+
+<span class="small-title">
+WELCOME TO
+</span>
+
+<h2>
+Your Cozy Corner<br>
+in <span>Sector 50</span>
+</h2>
+
+<p>
+Whether it's your first date, a long-overdue catch-up,
+an important meeting or simply a night out with your
+favorite people — Ritika Pandey is designed to make
+ordinary moments feel special.
+</p>
+
+<a href="#about" class="text-link">
+Discover our story →
+</a>
+
+</div>
+
+</section>
+
+
+<!--  ABOUT  -->
+
+<section class="about section" id="about">
+
+<div class="section-container about-grid">
+
+<div class="about-image">
+
+<img
+src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+alt="Cozy cafe interior">
+
+<div class="image-note">
+<strong>Made with warmth</strong>
+<span>One cup at a time.</span>
+</div>
+
+</div>
+
+
+<div class="about-content">
+
+<p class="eyebrow">
+OUR STORY
+</p>
+
+<h2>
+A Café With<br>
+<em>A Little More Heart.</em>
+</h2>
+
+<p>
+Ritika Pandey was created with a simple idea —
+to build a beautiful little space where people
+can slow down, connect and enjoy the moment.
+</p>
+
+<p>
+From thoughtfully prepared coffee and delicious
+bites to warm lighting and comfortable corners,
+every detail is designed to make you feel welcome.
+</p>
+
+<div class="owner">
+
+<div class="owner-icon">
+RP
+</div>
+
+<div>
+<strong>Ritika Pandey</strong>
+<span>Owner & Creative Heart</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--  VIBE  -->
+
+<section class="section" id="vibe">
+
+<div class="section-container">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+THE EXPERIENCE
+</p>
+
+<h2>
+Find Your <em>Favorite Corner.</em>
+</h2>
+
+<p>
+Soft lights, cozy seating, good food and the right
+atmosphere for every kind of plan.
+</p>
+
+</div>
+
+
+<div class="vibe-grid">
+
+<div class="vibe-card">
+
+<div class="vibe-icon">
+<i class="fa-solid fa-mug-hot"></i>
+</div>
+
+<h3>Cozy Coffee</h3>
+
+<p>
+Take a quiet break with your favorite cup
+and a little me-time.
+</p>
+
+</div>
+
+
+<div class="vibe-card">
+
+<div class="vibe-icon">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<h3>Date Nights</h3>
+
+<p>
+Warm lighting and intimate corners made
+for beautiful conversations.
+</p>
+
+</div>
+
+
+<div class="vibe-card">
+
+<div class="vibe-icon">
+<i class="fa-solid fa-laptop"></i>
+</div>
+
+<h3>Meet & Work</h3>
+
+<p>
+A relaxed environment for meetings,
+conversations and creative work.
+</p>
+
+</div>
+
+
+<div class="vibe-card">
+
+<div class="vibe-icon">
+<i class="fa-solid fa-moon"></i>
+</div>
+
+<h3>Evening Vibes</h3>
+
+<p>
+Stay after sunset and enjoy a cozy night
+with your favorite people.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--  GALLERY  -->
+
+<section class="gallery section" id="gallery">
+
+<div class="section-container">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+AESTHETIC MOMENTS
+</p>
+
+<h2>
+A Space Worth <em>Remembering.</em>
+</h2>
+
+</div>
+
+
+<div class="gallery-grid">
+
+<div class="gallery-item large">
+
+<img
+src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1200&q=85"
+alt="Cafe interior">
+
+<div class="gallery-label">
+Cozy Interiors
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
+alt="Cafe seating">
+
+<div class="gallery-label">
+Beautiful Corners
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+alt="Coffee">
+
+<div class="gallery-label">
+Fresh Coffee
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85"
+alt="Cafe atmosphere">
+
+<div class="gallery-label">
+Evening Mood
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+alt="Cafe dessert">
+
+<div class="gallery-label">
+Sweet Moments
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--  OCCASIONS  -->
+
+<section class="occasions section" id="occasions">
+
+<div class="section-container">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+MADE FOR YOUR MOMENTS
+</p>
+
+<h2>
+Come For The Coffee,<br>
+<em>Stay For The Memories.</em>
+</h2>
+
+</div>
+
+
+<div class="occasion-grid">
+
+<div class="occasion-card">
+<span>01</span>
+<i class="fa-regular fa-heart"></i>
+<h3>Date</h3>
+<p>Make your next coffee date a little more special.</p>
+</div>
+
+<div class="occasion-card">
+<span>02</span>
+<i class="fa-solid fa-users"></i>
+<h3>Outing</h3>
+<p>Catch up, laugh louder and enjoy time together.</p>
+</div>
+
+<div class="occasion-card">
+<span>03</span>
+<i class="fa-solid fa-briefcase"></i>
+<h3>Meetings</h3>
+<p>A comfortable setting for conversations and work.</p>
+</div>
+
+<div class="occasion-card">
+<span>04</span>
+<i class="fa-solid fa-sun"></i>
+<h3>Day Out</h3>
+<p>Turn an ordinary afternoon into a memorable one.</p>
+</div>
+
+<div class="occasion-card">
+<span>05</span>
+<i class="fa-solid fa-moon"></i>
+<h3>Night Out</h3>
+<p>Relax under warm lights and enjoy the evening.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--  CTA  -->
+
+<section class="cta">
+
+<div class="cta-content">
+
+<p class="eyebrow">
+YOUR TABLE IS WAITING
+</p>
+
+<h2>
+Good Coffee.<br>
+Good People.<br>
+<em>Good Memories.</em>
+</h2>
+
+<p>
+Come find your favorite corner at Ritika Pandey.
+</p>
+
+<a href="#contact" class="btn primary">
+Book a Table
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT  -->
+
+<section class="contact section" id="contact">
+
+<div class="section-container contact-grid">
+
+<div>
+
+<p class="eyebrow">
+COME SAY HELLO
+</p>
+
+<h2>
+Let's Make Your<br>
+<em>Next Visit Special.</em>
+</h2>
+
+<p class="contact-text">
+Have a question, planning a gathering or simply
+want to reserve a table? We'd love to hear from you.
+</p>
+
+</div>
+
+
+<div class="contact-info">
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+
+<div>
+<small>LOCATION</small>
+<p>Sector 50, Noida, Delhi</p>
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-envelope"></i>
+</div>
+
+<div>
+<small>EMAIL</small>
+
+<a href="mailto:ritikapandey45@gmail.com">
+ritikapandey45@gmail.com
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+
+<div>
+
+<small>OUR RATING</small>
+
+<p>
+<strong>4.5</strong>
+
+<span class="stars">
+★★★★★
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+
+<a
+href="mailto:ritikapandey45@gmail.com"
+class="btn primary contact-button">
+
+Contact Now
+<i class="fa-solid fa-paper-plane"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--  FOOTER  -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<h3>
+Ritika <span>Pandey</span>
+</h3>
+
+<p>
+A cozy little place for coffee,
+conversations & memories.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<div class="social">
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="mailto:ritikapandey45@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Ritika Pandey Café.
+Crafted with warmth & love.
+
+</div>
+
+</footer>
+
+
+</html>
+
+<button class="menu-btn" id="menuBtn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+
+/* Close menu after clicking */
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("active");
+
+        const icon = menuBtn.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+
+    });
+
+});
+
+</body>
+</html>
